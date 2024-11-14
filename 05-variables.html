@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cart quantity</title>
+  </head>
+  <body>
+    <button onclick="console.log(`Cart quantity is:${cartQ}`);">show quantity</button>
+    <button onclick=" cartQ ++console.log(`Cart quantity is:${cartQ}`); ">add to cart</button>
+    <button  onclick=" 
+    cartQ += 2;
+    console.log(`cart quantity:${cartQ}`);">+2</button>
+    <button onclick="
+    cartQ = 0
+    console.log(` cart quantity ${cartQ = 0}`)">Reset Cart </button>
+    <script>
+        let  cartQ = 0;
+    </script>
+  </body>
+</html>

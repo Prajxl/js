@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cart quantity</title>
+  </head>
+  <body>
+    <p>Rock Paper scissor</p>
+    <button
+    onclick= " playerGame('Rock');
+    ">Rock</button>
+    <button onclick ="
+      playerGame('paper');
+    ">paper</button>
+    <button onclick="
+      playerGame('scissor');
+    ">scissor</button>
+    <script>
+      /*paper*/
+      function playerGame(playerMove){
+        const cpMove = pickmove();
+
+        let result = ' ';
+
+        if(playerMove === 'paper')
+        {
+if(cpMove === 'Rock'){
+   result= 'Tie';
+}else if(cpMove === 'Paper'){
+ result= 'you lose';
+}else if(cpMove === 'scissor') {
+ result = 'you win';
+ }
+ }
+  else if(playerMove === 'Rock'){
+
+     if(cpMove === 'Rock'){
+        result= 'Tie';
+     }else if(cpMove === 'Paper'){
+      result= 'you lose';
+     }else if(cpMove === 'scissor') {
+      result = 'you win';
+     } 
+ }
+  else if(playerMove === 'scissor')
+      {
+     if(cpMove === 'Rock'){
+        result= 'you lose';
+     }else if(cpMove === 'Paper'){
+      result= 'you win';
+     }else if(cpMove=== 'scissor') {
+      result = 'Tie';
+     }
+    }
+    alert(`You Picked ${playerMove} computer picked ${cpMove} . ${result}`);
+  }
+      function pickmove(){
+      const rondNum = Math.random();
+
+    let cpMove = '';
+
+    if( rondNum >=0 && rondNum < 1 / 3){
+      cpMove='Rock';
+    } else if ( rondNum < 2 / 3)
+    {
+      cpMove= 'Paper';
+    }else{
+      cpMove= 'scissor';
+    }
+    return cpMove;
+  }
+    </script>
+  </body>
+</html>
