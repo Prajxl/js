@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <p>click subsribe</p>
+    <button onclick="
+        subs();
+    " class="js-button">Subscribe</button>
+    <script>
+      function subs() {
+        const Element = document.querySelector('.js-button');
+          if(Element.innerText === 'Subscribe')
+          {
+            Element.innerHTML = 'subsribed';
+          }else{
+            Element.innerHTML = 'Subsribe';
+          }
+      }
+    </script>
+  </body>
+</html>
