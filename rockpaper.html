@@ -14,8 +14,17 @@
     <button onclick="
       playerGame('scissor');
     ">scissor</button>
+    <button  onclick="
+        score.wins = 0;
+        score.losses =0 ;
+        score.ties = 0; ">Reset</button>
     <script>
       /*paper*/
+      const score = { 
+        wins: 0,
+        losses: 0,
+        ties: 0
+      };
       function playerGame(playerMove){
         const cpMove = pickmove();
 
@@ -24,11 +33,11 @@
         if(playerMove === 'paper')
         {
 if(cpMove === 'Rock'){
-   result= 'Tie';
+   result= 'win';
 }else if(cpMove === 'Paper'){
- result= 'you lose';
+ result= 'Tie';
 }else if(cpMove === 'scissor') {
- result = 'you win';
+ result = 'loose';
  }
  }
   else if(playerMove === 'Rock'){
@@ -36,22 +45,29 @@ if(cpMove === 'Rock'){
      if(cpMove === 'Rock'){
         result= 'Tie';
      }else if(cpMove === 'Paper'){
-      result= 'you lose';
+      result= 'loose';
      }else if(cpMove === 'scissor') {
-      result = 'you win';
+      result = 'win';
      } 
  }
   else if(playerMove === 'scissor')
       {
      if(cpMove === 'Rock'){
-        result= 'you lose';
+        result = 'loose';
      }else if(cpMove === 'Paper'){
-      result= 'you win';
-     }else if(cpMove=== 'scissor') {
+      result = 'win';
+     }else if(cpMove === 'scissor') {
       result = 'Tie';
      }
     }
-    alert(`You Picked ${playerMove} computer picked ${cpMove} . ${result}`);
+    if(result === 'win'){
+      score.wins +=1 ;
+    }else if(result ==='loose'){
+      score.losses +=1;
+    }else if(result === 'Tie'){
+      score.tie +=1;
+    }
+    alert(`You Picked ${playerMove} computer picked ${cpMove} . ${result} wins:${score.wins} , loose ${score.losses}, tie ${score.ties}`);
   }
       function pickmove(){
       const rondNum = Math.random();
